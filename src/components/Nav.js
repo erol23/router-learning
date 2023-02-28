@@ -1,15 +1,26 @@
-import React from 'react'
+import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
     <div>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/instructors">Instructors</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/instructors">Instructors</Link>
+        </li>
+        <li>
+          <NavLink
+            to="/contact"
+            style={({ isActive }) => ({ color: isActive && "red" })}
+          >
+            Contact
+          </NavLink>
+        </li>
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
